@@ -123,7 +123,7 @@ class Form extends Component
                                             <input type="checkbox"  onChange={this.changeCheckbox} name="original_work_by_artist"/>
                                             <div className="state label-first">
                                                 <img className="svg" src="/images/task.png" />
-                                                <label>Inquire about originalwork by Robert. </label>
+                                                <label>Inquire about original work by Robert. </label>
                                             </div>
                                         </div>
 
