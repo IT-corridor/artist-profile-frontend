@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { useRouteMatch } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import Main from "./Main";
 import '../css/bootstrap.min.css'
 import '../css/animate.min.css'
@@ -64,7 +65,9 @@ class Gallery extends Component
                  </header>
                  <div className="container">
                      <div className="wrapper">
-                         <a className="full_screen_modal_close">X</a>
+                         <a className="full_screen_modal_close">
+                             <i className="fa fa-times fa-lg"></i>
+                         </a>
                          <Galleries galleries={galleries} />
                      </div>
                  </div>

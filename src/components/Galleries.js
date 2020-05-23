@@ -12,24 +12,25 @@ class Galleries extends Component
         let galleries = this.props.galleries
 
         return (
-           <div className="carousel" id="carousel-page">
-                 {
-                                     galleries.map(gallery =>
+                <div className="carousel" id="carousel-page">
+                        {
+                                            galleries.map(gallery =>
 
-                            <div key={gallery.id}>
-                                   <img className="d-block" src={gallery.image} alt=" First slide"/>
+                                    <div key={gallery.id}>
+                                        <img className="d-block" src={gallery.image} alt=" First slide"/>
 
-                                   <div className="art-details">
-                                       <h2 className="art-name"><span>{gallery.name},</span> {gallery.year} </h2>
+                                        <div className="art-details">
+                                            <h2 className="art-name"><span>{gallery.name},</span> {gallery.year} </h2>
 
-                                        {Parser(gallery.content)}
-                                   </div>
-                            </div>
-                        )
+                                                {Parser(gallery.content)}
+                                        </div>
+                                    </div>
+                                )
 
-                    }
+                            }
 
-           </div>
+                </div>
+           
         )
     }
 

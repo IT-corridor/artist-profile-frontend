@@ -18,7 +18,7 @@ class Artist extends Component
                                <div className="col-lg-5 col-md-4">
                                    <img src= {artist_image} className="author-img" alt="author" />
 
-                                   <p className="photo-copyright">© Photo by <a href="#">Michel Lunardelli</a></p>
+                                   <p className="photo-copyright">Robert Bissell</p>
                                </div>
                                <div className="col-lg-7 col-md-8 description-right">
                                      {Parser(artist_content)}

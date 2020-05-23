@@ -136,7 +136,7 @@ class Home extends Component
                                     <a className="navigation__link" href="#3_connect">CONNECT</a>
                                 </ul>
                             </div>
-                            <button type="button" class="close" data-dismiss="menuToggle" aria-label="Close">
+                            <button type="button" className="close" data-dismiss="menuToggle" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </nav>

@@ -14,10 +14,10 @@ class Menu extends Component
 
         return (
              <header>
-                <nav class="fixed-bar  header-sticky menu animated-quick fadeOutUp" id="mainNav">
-                    <a class="navigation__link" href="#1_artwork">ARTWORK</a>
-                    <a class="navigation__link" href="#2_about">ABOUT</a>
-                    <a class="navigation__link" href="#3_connect">CONNECT</a>
+                <nav className="fixed-bar  header-sticky menu animated-quick fadeOutUp" id="mainNav">
+                    <a className="navigation__link" href="#1_artwork">ARTWORK</a>
+                    <a className="navigation__link" href="#2_about">ABOUT</a>
+                    <a className="navigation__link" href="#3_connect">CONNECT</a>
                 </nav>
              </header>
         )

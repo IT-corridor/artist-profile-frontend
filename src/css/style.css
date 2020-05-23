@@ -1012,6 +1012,7 @@ button:focus {
         text-align: center;
         width: 363px;
         margin: 0 auto;
+        justify-content: center;
     }
 
     .gallery-banner header {

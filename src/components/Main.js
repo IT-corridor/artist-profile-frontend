@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import $ from 'jquery'
+var currentIndex = 0
 
 class Main extends Component {
     constructor(props) {
@@ -85,7 +86,6 @@ class Main extends Component {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     responsive: [
-
                         {
                             breakpoint: 1024,
                             settings: {
@@ -104,20 +104,23 @@ class Main extends Component {
                 });
             }
 
+            $('#carousel-page').on('afterChange', function(slick, slide){
+                console.log("changing index");
+                // left
+            });
 
             $(".slick-slide").click(function (event) {
-                var currentIndex = $(this).attr('data-slick-index');
-
+                currentIndex = parseInt($(this).attr('data-slick-index'));
                 $("#carousel-page").slick('unslick');
                 $(".wrapper").addClass('full_screen');
                 $(".full_screen_modal_close").show();
-                $("#carousel-page").slick({
-                    infinite: true,
+                $("#carousel-page").not('.slick-initialized').slick({
                     slidesToShow: 1,
+                    slidesToScroll: 1,
                     fade: true,
+                    initialSlide: currentIndex,
                     speed: 300,
-                    cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-                    touchThreshold: 100
+                    cssEase: 'linear',
                 });
             });
         }
