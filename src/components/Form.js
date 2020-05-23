@@ -111,7 +111,7 @@ class Form extends Component
         let email_content = this.props.email_content
 
         return (
-               <section className="container parallax-container parallax-container-parent form-banner  hero" id="3_connect">
+               <section className="fade-in-section container parallax-container parallax-container-parent form-banner  hero" id="3_connect">
                            <div className="heading">
                                {Parser(email_content)}
                            </div>

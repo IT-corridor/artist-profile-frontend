@@ -13,7 +13,7 @@ class Artist extends Component
         let artist_content = this.props.artist_content
 
         return (
-                       <section className="middle-section parallax-container parallax-container-parent" id="2_about">
+                       <section className="fade-in-section middle-section parallax-container parallax-container-parent" id="2_about">
                            <div className="row">
                                <div className="col-lg-5 col-md-4">
                                    <img src= {artist_image} className="author-img" alt="author" />

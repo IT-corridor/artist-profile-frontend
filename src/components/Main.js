@@ -60,6 +60,17 @@ class Main extends Component {
             }
         });
 
+        var href = window.location.href;
+        const me = this;
+        if (href.includes('#')) {
+          var target = '#' + href.split("#")[1];
+          $('html, body').stop().animate({
+              scrollTop: $(target).offset().top
+          }, 600, function () {
+              //location.hash = target; //attach the hash (#jumptarget) to the pageurl
+          });
+        }
+
 
         $("#menuToggle").click(function () {
             $("#menu1").fadeIn();
@@ -124,6 +135,22 @@ class Main extends Component {
                 });
             });
         }
+
+        $(document).on("scroll", function () {
+          var pageTop = $(document).scrollTop();
+          var pageBottom = pageTop + $(window).height();
+          var tags = $(".fade-in-section");
+
+          for (var i = 0; i < tags.length; i++) {
+            var tag = tags[i];
+
+            if ($(tag).position().top < pageBottom) { 
+              $(tag).addClass("visible");
+            } else {
+              $(tag).removeClass("visible");
+            }
+          }
+        })
     }
 
     render() {

@@ -38,7 +38,7 @@ class Home extends Component
         }
     }
 
-        componentDidMount()
+    componentDidMount()
     {
         axios.get(url_back+'/home/').then(response => {
             let data = response.data.data
@@ -68,7 +68,6 @@ class Home extends Component
             $('.page-section').removeClass('parallax-container');
         }
 
-
         $('a').bind('click', function (e) {
             e.preventDefault(); // prevent hard jump, the default behavior
 
@@ -84,7 +83,7 @@ class Home extends Component
         });
 
 
-         var doAnimations = function () {
+        var doAnimations = function () {
 
          var offset = $(window).scrollTop() + $(window).height(),
                     $animatables = $('.animatable');
@@ -108,53 +107,56 @@ class Home extends Component
 
     render()
     {
-        const {headerImage,artwork_content, artworks, artist_image, artist_content, email_content} = this.state
-
+        const {height, headerImage,artwork_content, artworks, artist_image, artist_content, email_content} = this.state
         return (
-            <div className ="wrapper home">
-                    <Main />
-                    <Menu ></Menu>
-                    <section className="main-banner">
-                        <div className="parallax-container parallax-container-parent">
-                            <img src= {headerImage} className="cover-bg" alt="background"/>
-                        </div>
-                        <h2 className="generic-title"><img src="logo.svg" className="logo"/></h2>
+              <div className ="wrapper home">
+                      <Main />
+                      <Menu ></Menu>
+                      <section className="main-banner">
+                          <div className="parallax-container parallax-container-parent">
+                              <img src= {headerImage} className="cover-bg" alt="background"/>
+                          </div>
+                          <h2 className="generic-title"><img src="logo.svg" className="logo"/></h2>
 
-                        <nav role="navigation" className="top-menu">
-                            <div id="menuToggle">
-                                <img src="images/rblogo-white.svg" className="mobile-logo" alt="logo"/>
+                          <nav role="navigation" className="top-menu">
+                              <div id="menuToggle">
+                                  <img
+                                    src="images/rblogo-white.svg"
+                                    className="mobile-logo"
+                                    alt="logo"
+                                  />
 
-                                <div className="dotes">
-                                    <i className="fa fa-circle"></i>
-                                    <i className="fa fa-circle"></i>
-                                    <i className="fa fa-circle"></i>
-                                </div>
-                                <input type="checkbox"/>
-                                <ul id="menu-panel">
-                                    <a className="navigation__link active" href="#1_artwork">ARTWORK</a>
-                                    <a className="navigation__link" href="#2_about">ABOUT</a>
-                                    <a className="navigation__link" href="#3_connect">CONNECT</a>
-                                </ul>
-                            </div>
-                            <button type="button" className="close" data-dismiss="menuToggle" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </nav>
+                                  <div className="dotes">
+                                      <i className="fa fa-circle"></i>
+                                      <i className="fa fa-circle"></i>
+                                      <i className="fa fa-circle"></i>
+                                  </div>
+                                  <input type="checkbox"/>
+                                  <ul id="menu-panel">
+                                      <a className="navigation__link active" href="#1_artwork">ARTWORK</a>
+                                      <a className="navigation__link" href="#2_about">ABOUT</a>
+                                      <a className="navigation__link" href="#3_connect">CONNECT</a>
+                                  </ul>
+                              </div>
+                              <button type="button" className="close" data-dismiss="menuToggle" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                              </button>
+                          </nav>
 
-                    </section>
-                    <section className="container grid parallax-container-parent parallax-container page-section hero" id="1_artwork">
-                           <div className="heading">
-                               {Parser(artwork_content)}
-                           </div>
-                            <Artworks artworks={artworks} />
-                       </section>
+                      </section>
+                      <section className="container grid parallax-container-parent parallax-container page-section hero" id="1_artwork">
+                             <div className="heading fade-in-section">
+                                 {Parser(artwork_content)}
+                             </div>
+                              <Artworks artworks={artworks} />
+                         </section>
 
-                       <Artist artist_image={artist_image} artist_content={artist_content} />
+                         <Artist artist_image={artist_image} artist_content={artist_content} />
 
 
-                       <Form email_content={email_content} />
-                    <Footer />
-          </div>
+                         <Form email_content={email_content} />
+                      <Footer />
+              </div>
         )
     }
 }
