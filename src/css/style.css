@@ -190,7 +190,8 @@
 }
 
 .full_screen .slick-slide img {
-    width: 30%;
+    width: 80%;
+    max-height: 90%;
     position: absolute;
     left: 0;
     right: 0;
