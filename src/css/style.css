@@ -217,7 +217,7 @@
 .slick-next {
     display: inline-block;
     position: absolute;
-    right: -132px;
+    right: -100px;
     top: 50%;
     width: 10px;
     height: 30px;
@@ -225,6 +225,16 @@
     background-color: transparent;
     color: transparent;
     background: url(../images/arrow-right.png) no-repeat 0 0;
+}
+
+@media screen and (max-width: 1279px) {
+    .slick-prev {
+        left: -80px;
+    }
+    
+    .slick-next {
+        right: -80px;
+    }
 }
 
 .full_screen .art-details {
@@ -994,23 +1004,33 @@ button:focus {
 
 /***************start fade in section**************/
 .fade-in-section {
-  opacity: 0;
-  transform: translate(0, 20px);
-  transition: all 1s;
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition: all 1s;
 }
 
 .fade-in-section.visible {
-  opacity: 1;
-  transform: translate(0, 0);
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 @media (max-width: 767px) {
-  .fade-in-section:first-child {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+    .fade-in-section:first-child {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 /***************end fade in section**************/
+
+/* more space between images in gallery section */
+.slick-slide {
+    margin: 0 25px;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -25px;
+}
+/* ============================================ */
 
 /***************responsive css*******/
 @media (min-width: 767px) {
@@ -1110,11 +1130,11 @@ button:focus {
 @media (max-width: 1200px) {
 
     .slick-prev {
-        left: -32px;
+        left: -50px;
     }
 
     .slick-next {
-        right: -65px;
+        right: -50px;
     }
 
     .middle-section {
@@ -1229,6 +1249,16 @@ button:focus {
 .full_screen .slick-slide img{
     width:70%;
 }
+}
+
+@media (max-width: 800px) {
+    .slick-prev {
+        left: -32px;
+    }
+
+    .slick-next {
+        right: -32px;
+    }
 }
 
 @media (max-width: 767px) {
