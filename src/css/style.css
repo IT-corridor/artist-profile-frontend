@@ -371,6 +371,12 @@ body {
     z-index: 2;
 }
 
+@media screen and (min-width: 768px) {
+    .main-banner {
+        margin-bottom: 120px;
+    }
+}
+
 .cover-bg, .logo {
     width: 100%;
 }
@@ -428,7 +434,7 @@ body {
 
 .middle-section {
     max-width: 1023px;
-    margin: 0 auto 80px;
+    margin: 0 auto 120px;
 }
 
 .description {
@@ -518,7 +524,7 @@ body {
 }
 
 .grid {
-    margin-bottom: 50px;
+    margin-bottom: 120px;
 }
 
 .grid-inner {
