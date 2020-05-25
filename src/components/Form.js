@@ -147,17 +147,16 @@ class Form extends Component
                                        </div>
                                    <div className="form-panel">
                                        <div className="form-group">
+                                           <input type="text" required="required" name='name'  onChange={this.handleChange} noValidate />
+                                           <label className="control-label">Name</label>
+                                       </div>
+                                       <div className="form-group">
                                            <input type="text" required="required" name='email' onChange={this.handleChange} noValidate />
                                            <label className="control-label">Email</label>
                                        </div>
                                        <div className="form-group">
                                            <PhoneInput  country="us" onChange={this.handleChangePhone} required="required"  value={this.phone_number}
                                            name='phone_number'  noValidate/>
-                                       </div>
-                                       <div className="form-group">
-                                           <input type="text" required="required" name='name'  onChange={this.handleChange} noValidate />
-                                           <label className="control-label">Name</label>
-
                                        </div>
                                    </div>
 
