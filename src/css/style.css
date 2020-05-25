@@ -1009,13 +1009,15 @@ button:focus {
 /*}*/
 
 /***************start fade in section**************/
-.fade-in-section {
+.fade-in-section,
+.content-description p {
     opacity: 0;
     transform: translate(0, 20px);
     transition: all 1s;
 }
 
-.fade-in-section.visible {
+.fade-in-section.visible,
+.content-description p.visible {
     opacity: 1;
     transform: translate(0, 0);
 }

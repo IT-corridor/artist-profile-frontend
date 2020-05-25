@@ -150,6 +150,18 @@ class Main extends Component {
               $(tag).removeClass("visible");
             }
           }
+
+          var pTags = $(".content-description p");
+
+          for (var i = 0; i < pTags.length; i++) {
+            var pTag = pTags[i];
+
+            if ($(pTag).position().top < pageBottom) { 
+              $(pTag).addClass("visible");
+            } else {
+              $(pTag).removeClass("visible");
+            }
+          }
         })
     }
 
