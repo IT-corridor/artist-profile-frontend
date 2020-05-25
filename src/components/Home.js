@@ -74,7 +74,7 @@ class Home extends Component
             var target = $(this).attr("href"); // Set the target as variable
 
             $('html, body').stop().animate({
-                scrollTop: $(target).offset().top - 100
+                scrollTop: $(target).offset().top - 110
             }, 600, function () {
                 //location.hash = target; //attach the hash (#jumptarget) to the pageurl
             });
