@@ -65,7 +65,7 @@ class Main extends Component {
         if (href.includes('#')) {
           var target = '#' + href.split("#")[1];
           $('html, body').stop().animate({
-              scrollTop: $(target).offset().top
+              scrollTop: $(target).offset().top - 100
           }, 600, function () {
               //location.hash = target; //attach the hash (#jumptarget) to the pageurl
           });
