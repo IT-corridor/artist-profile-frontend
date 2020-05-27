@@ -35,6 +35,7 @@ class Home extends Component
             artist_image: '',
             artist_content: '',
             email_content: '',
+            artist_header_content: '',
         }
     }
 
@@ -49,6 +50,7 @@ class Home extends Component
                     artist_image: data.artist_image,
                     artist_content:  data.artist_content,
                     email_content:   data.email_content,
+                    artist_header_content: data.artist_header_content,
                 })
             }).catch(error=>{
         })
@@ -107,7 +109,7 @@ class Home extends Component
 
     render()
     {
-        const {height, headerImage,artwork_content, artworks, artist_image, artist_content, email_content} = this.state
+        const {height, headerImage,artwork_content, artworks, artist_image, artist_content, email_content, artist_header_content} = this.state
         return (
               <div className ="wrapper home">
                       <Main />
@@ -133,9 +135,9 @@ class Home extends Component
                                   </div>
                                   <input type="checkbox"/>
                                   <ul id="menu-panel">
-                                      <a className="navigation__link active" href="#1_artwork">ARTWORK</a>
-                                      <a className="navigation__link" href="#2_about">ABOUT</a>
-                                      <a className="navigation__link" href="#3_connect">CONNECT</a>
+                                      <a className="navigation__link active" href="#1_artwork">Artwork</a>
+                                      <a className="navigation__link" href="#2_about">About</a>
+                                      <a className="navigation__link" href="#3_connect">Connect</a>
                                   </ul>
                               </div>
                               <button type="button" className="close" data-dismiss="menuToggle" aria-label="Close">
@@ -151,7 +153,7 @@ class Home extends Component
                               <Artworks artworks={artworks} />
                          </section>
 
-                         <Artist artist_image={artist_image} artist_content={artist_content} />
+                         <Artist artist_image={artist_image} artist_content={artist_content} artist_header_content={artist_header_content} />
 
 
                          <Form email_content={email_content} />

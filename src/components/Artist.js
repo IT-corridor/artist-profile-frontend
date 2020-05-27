@@ -11,9 +11,23 @@ class Artist extends Component
     {
         let artist_image = this.props.artist_image
         let artist_content = this.props.artist_content
+        let artist_header_content = this.props.artist_header_content || ""
+
+        const style = {
+          fontSize: '17.5px',
+          lineHeight: '24px',
+          letterSpacing: '-0.005em',
+          color: '#7C7C7C',
+          marginBottom: '60px',
+          fontWeight: 'normal',
+          paddingLeft: '60px',
+        }
 
         return (
                        <section className="fade-in-section middle-section parallax-container parallax-container-parent" id="2_about">
+                           <div style={style}>
+                            {Parser(artist_header_content)}
+                           </div>
                            <div className="row">
                                <div className="col-lg-5 col-md-4">
                                    <img src= {artist_image} className="author-img" alt="author" />
