@@ -1271,6 +1271,10 @@ button:focus {
 }
 }
 
+.description-right p {
+  padding-right: 148px;
+}
+
 @media (max-width: 800px) {
     .slick-prev {
         left: -32px;
@@ -1279,11 +1283,16 @@ button:focus {
     .slick-next {
         right: -32px;
     }
+
+    .description-right p {
+      padding-right: 50px;
+    }
 }
 
 @media (max-width: 767px) {
     .description-right p {
         padding-left: 0 !important;
+        padding-right: 0;
 }
     .checkbox-panel {
         display: block;
