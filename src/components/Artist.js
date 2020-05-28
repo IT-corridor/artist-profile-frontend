@@ -20,21 +20,22 @@ class Artist extends Component
           color: '#7C7C7C',
           marginBottom: '60px',
           fontWeight: 'normal',
-          paddingLeft: '60px',
+          paddingLeft: '30px',
+          paddingRight: '30px'
         }
 
         return (
                        <section className="fade-in-section middle-section parallax-container parallax-container-parent" id="2_about">
-                           <div style={style}>
+                           <div className="artist-header-content" style={style}>
                             {Parser(artist_header_content)}
                            </div>
-                           <div className="row">
-                               <div className="col-lg-5 col-md-4">
+                           <div className="row artist-row">
+                               <div className="col-lg-6 col-md-6 col-xs-4">
                                    <img src= {artist_image} className="author-img" alt="author" />
 
                                    <p className="photo-copyright">Robert Bissell</p>
                                </div>
-                               <div className="col-lg-7 col-md-8 description-right">
+                               <div className="col-lg-6 col-md-6 col-xs-8 description-right">
                                      {Parser(artist_content)}
                                </div>
                            </div>

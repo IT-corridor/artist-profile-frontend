@@ -451,7 +451,7 @@ body {
     color: #7C7C7C;
     margin-bottom: 40px;
     font-weight: normal;
-    padding-left: 60px;
+    padding-left: 30px;
 }
 
 .modal-body {
@@ -1052,6 +1052,34 @@ button:focus {
   margin: 0;
 }
 
+.row.artist-row {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.artist-header-content {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .row.artist-row {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .row.artist-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .artist-header-content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
 /***************responsive css*******/
 @media (min-width: 767px) {
     .gallery-banner .lslide {
@@ -1271,10 +1299,6 @@ button:focus {
 }
 }
 
-.description-right p {
-  padding-right: 148px;
-}
-
 @media (max-width: 800px) {
     .slick-prev {
         left: -32px;
@@ -1283,16 +1307,11 @@ button:focus {
     .slick-next {
         right: -32px;
     }
-
-    .description-right p {
-      padding-right: 50px;
-    }
 }
 
 @media (max-width: 767px) {
     .description-right p {
         padding-left: 0 !important;
-        padding-right: 0;
 }
     .checkbox-panel {
         display: block;
