@@ -20,7 +20,7 @@ class Galleries extends Component
                                         <img className="d-block" src={gallery.image} alt=" First slide"/>
 
                                         <div className="art-details">
-                                            <h2 className="art-name"><span>{gallery.name},</span> {gallery.year} </h2>
+                                            <h2 className="art-name"><span>{gallery.name}</span></h2>
 
                                                 {Parser(gallery.content)}
                                         </div>
