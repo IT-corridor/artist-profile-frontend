@@ -70,11 +70,10 @@ class Home extends Component
             $('.page-section').removeClass('parallax-container');
         }
 
-        $('a').bind('click', function (e) {
-            e.preventDefault(); // prevent hard jump, the default behavior
+        $('header a, main-banner a').bind('click', function (e) {
+          e.preventDefault(); // prevent hard jump, the default behavior
 
-            var target = $(this).attr("href"); // Set the target as variable
-
+          var target = $(this).attr("href"); // Set the target as variable
             $('html, body').stop().animate({
                 scrollTop: $(target).offset().top - 110
             }, 600, function () {

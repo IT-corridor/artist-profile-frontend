@@ -11,10 +11,10 @@ class Footer extends Component {
         return (
         	<div style={{ textAlign: "center", padding: "50px 0" }}>
         		<div style={{ marginBottom: 5 }}>
-        			<a href="https://www.instagram.com/rbissell/?hl=en" style={{ marginRight: 5 }} alt="">
+        			<a target="_blank" href="https://www.instagram.com/rbissell/?hl=en" style={{ marginRight: 5 }} alt="">
         				<img src={instagram} alt="instagram" style={{ width: 40, height: 40, boxShadow: "none" }} />
         			</a>
-        			<a href="https://www.facebook.com/robertbissellart/?ref=py_c" alt="">
+        			<a target="_blank" href="https://www.facebook.com/robertbissellart/?ref=py_c" alt="">
         				<img src={facebook} alt="facebook" style={{ width: 40, height: 40, boxShadow: "none" }} />
         			</a>
         		</div>
