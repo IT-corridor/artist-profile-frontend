@@ -100,7 +100,15 @@ class Form extends Component
 
 	changeCheckbox = (event) => {
 		const { name, value } = event.target;
-		this.setState({ [name]: value});
+    console.log(this.state[name])
+    console.log(name)
+    if (!this.state[name]) {
+      name === "original_work_by_artist"
+         ? this.setState({ limited_edition_prints_sculpture: false, newsletter_from_artist: false })
+         : name === "limited_edition_prints_sculpture" ? this.setState({ original_work_by_artist: false, newsletter_from_artist: false })
+         : this.setState({ original_work_by_artist: false, limited_edition_prints_sculpture: false })
+    }
+		this.setState({ [name]: !this.state[name]});
 	}
 
 
@@ -120,7 +128,12 @@ class Form extends Component
 								  <div className="checkbox-panel ">
 
 										<div className="pretty p-svg p-plain ">
-											<input type="checkbox"  onChange={this.changeCheckbox} name="original_work_by_artist"/>
+											<input
+                        type="checkbox"
+                        onChange={this.changeCheckbox}
+                        name="original_work_by_artist"
+                        checked={this.state.original_work_by_artist}
+                      />
 											<div className="state label-first">
 												<img className="svg" src="/images/task.png" />
 												<label>Inquire about original work by Robert. </label>
@@ -128,7 +141,12 @@ class Form extends Component
 										</div>
 
 										 <div className="pretty p-svg p-plain">
-											<input type="checkbox" onChange={this.changeCheckbox} name="limited_edition_prints_sculpture" />
+											<input
+                        type="checkbox"
+                        onChange={this.changeCheckbox}
+                        name="limited_edition_prints_sculpture"
+                        checked={this.state.limited_edition_prints_sculpture}
+                      />
 											<div className="state">
 												<img className="svg" src="/images/task.png" />
 												<label>Inquire about Robert’s limited
@@ -136,7 +154,12 @@ class Form extends Component
 											</div>
 										</div>
 										<div className="pretty p-svg p-plain">
-											<input type="checkbox" onChange={this.changeCheckbox}  name="newsletter_from_artist" />
+											<input
+                        type="checkbox"
+                        onChange={this.changeCheckbox}
+                        name="newsletter_from_artist"
+                        checked={this.state.newsletter_from_artist}
+                      />
 											<div className="state">
 												<img className="svg" src="/images/task.png" />
 												<label>To receive a very occasional newsletter
