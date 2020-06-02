@@ -67,27 +67,42 @@ class Form extends Component
 	  event.preventDefault();
 	  if(validateForm(this.state.errors)) {
 		   event.preventDefault()
-		   let fileds = {
-			  'email':'Email',
-			  'phone_number':'Phone Number',
-			  'name':'Name',
-			  'message':'Message',
-		   }
+       const {
+         original_work_by_artist,
+         limited_edition_prints_sculpture,
+         newsletter_from_artist,
+       } = this.state;
+
+       if (original_work_by_artist || limited_edition_prints_sculpture || newsletter_from_artist) {
+  		   let fileds = {
+  			  'email':'Email',
+  			  'phone_number':'Phone Number',
+  			  'name':'Name',
+  			  'message':'Message',
+  		   }
 
 
-		   axios.post(url_back+'/util/contact/', this.state).then(response => {
-				alertify.success(response.data.message)
-				document.getElementById("contact").reset();
-			})
-				.catch(error => {
-					let data = error.response.data
-					Object.keys(data).map((keyName, i) => (
+  		   axios.post(url_back+'/util/contact/', this.state).then(response => {
+  				alertify.success(response.data.message)
+          this.setState({
+            original_work_by_artist: false,
+            limited_edition_prints_sculpture: false,
+            newsletter_from_artist: false,
+          })
+  				document.getElementById("contact").reset();
+  			})
+  				.catch(error => {
+  					let data = error.response.data
+  					Object.keys(data).map((keyName, i) => (
 
-						Object.keys(data[keyName]).map((keyName2, s) => (
-							 alertify.error('<div class="label-alertify">'+fileds[keyName]+'</div> '+data[keyName][keyName2])
-						))
-					))
-		   })
+  						Object.keys(data[keyName]).map((keyName2, s) => (
+  							 alertify.error('<div class="label-alertify">'+fileds[keyName]+'</div> '+data[keyName][keyName2])
+  						))
+  					))
+  		   })
+       } else {
+          alertify.error('You must check at least one checkbox.');
+        }
 	  }
 	}
 
@@ -100,14 +115,6 @@ class Form extends Component
 
 	changeCheckbox = (event) => {
 		const { name, value } = event.target;
-    console.log(this.state[name])
-    console.log(name)
-    if (!this.state[name]) {
-      name === "original_work_by_artist"
-         ? this.setState({ limited_edition_prints_sculpture: false, newsletter_from_artist: false })
-         : name === "limited_edition_prints_sculpture" ? this.setState({ original_work_by_artist: false, newsletter_from_artist: false })
-         : this.setState({ original_work_by_artist: false, limited_edition_prints_sculpture: false })
-    }
 		this.setState({ [name]: !this.state[name]});
 	}
 
