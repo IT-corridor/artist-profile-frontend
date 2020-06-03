@@ -32,7 +32,7 @@ class Gallery extends Component
 
     render()
     {
-        this.id =   parseInt(this.props.match.params.id, 10)
+        this.id = this.props.match.params.id
         if (!this.id) {
              throw new Error();
          }
