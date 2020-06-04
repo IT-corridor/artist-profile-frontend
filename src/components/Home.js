@@ -117,12 +117,12 @@ class Home extends Component
                           <div className="parallax-container parallax-container-parent">
                               <img src= {headerImage} className="cover-bg" alt="background"/>
                           </div>
-                          <h2 className="generic-title"><img src="logo.svg" className="logo"/></h2>
+                          <h2 className="generic-title"><img src="/logo.svg" className="logo"/></h2>
 
                           <nav role="navigation" className="top-menu">
                               <div id="menuToggle">
                                   <img
-                                    src="images/rblogo-white.svg"
+                                    src="/images/rblogo-white.svg"
                                     className="mobile-logo"
                                     alt="logo"
                                   />
