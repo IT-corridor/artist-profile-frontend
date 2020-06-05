@@ -1084,6 +1084,11 @@ button:focus {
   }
 }
 
+.art-details {
+    background: rgb(229, 229, 229);
+    opacity: 0.6;
+}
+
 /***************responsive css*******/
 @media (min-width: 767px) {
 	.gallery-banner .lslide {
