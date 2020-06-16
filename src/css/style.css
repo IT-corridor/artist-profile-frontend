@@ -353,6 +353,10 @@ body {
 	right: 0;
 }
 
+.gallery-banner .container {
+    margin-top: -100px;
+}
+
 .fixed {
 	position: fixed;
 	top: 0;
