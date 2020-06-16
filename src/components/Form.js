@@ -37,7 +37,8 @@ class Form extends Component {
 				name: '',
 				email: '',
 				message: '',
-			}
+			},
+			disabled: false,
 		}
 	}
 
@@ -74,6 +75,9 @@ class Form extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+		this.setState({
+			disabled: true
+		})
 		if (validateForm(this.state.errors)) {
 			event.preventDefault()
 			const {
@@ -90,13 +94,15 @@ class Form extends Component {
 					'message': 'Message',
 				}
 
+				console.log("success")
 
 				axios.post(url_back + '/util/contact/', this.state).then(response => {
 						alertify.success(response.data.message)
 						this.reset();
 						document.getElementById("contact").reset();
-
-
+						this.setState({
+							disabled: false
+						})
 					})
 					.catch(error => {
 						let data = error.response.data
@@ -106,9 +112,16 @@ class Form extends Component {
 								alertify.error('<div class="label-alertify">' + fileds[keyName] + '</div> ' + data[keyName][keyName2])
 							))
 						))
+
+						this.setState({
+							disabled: false
+						})
 					})
 			} else {
 				alertify.error('You must check at least one checkbox.');
+				this.setState({
+					disabled: false
+				})
 			}
 		}
 	}
@@ -259,7 +272,13 @@ class Form extends Component {
 					   	<div className="form-group">
 					 		{errors.message.length > 0 && <div className='error'>{errors.message}</div>}
 					  	</div>
-					   	<button type="submit" className="send-btn button">Send</button>
+					   	<button
+					   		type="submit"
+					   		className="send-btn button"
+					   		disabled={this.state.disabled}
+				   		>
+				   			Send
+			   			</button>
 				   	</form>
 			   	</div>
 			</section>
