@@ -13,18 +13,21 @@ import {
   Link, useParams
 } from "react-router-dom";
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-3671138-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
-  return (
+    return (
         <ErrorBoundary>
             <Router>
-                  <Switch>
+                <Switch>
                     <Route path="/gallery/:id" render={(props) => <Gallery {...props} />}/>
                     <Route path="/" component={Home}/>
-                  </Switch>
+                </Switch>
             </Router>
-         </ErrorBoundary>
-  );
+        </ErrorBoundary>
+    );
 }
 
 export default App;
