@@ -35,7 +35,7 @@ class Gallery extends Component
         this.id = this.props.match.params.id
         if (!this.id) {
              throw new Error();
-         }
+        }
 
         const {galleries, gallery_text_name, gallery_text_desc} = this.state
 
@@ -82,7 +82,7 @@ class Gallery extends Component
         )
     }
 
-        componentDidMount()
+    componentDidMount()
     {
         axios.get(url_back+'/util/gallery/'+this.id).then(response => {
             let data = response.data.data

@@ -9,7 +9,6 @@ class Artworks extends Component
     render()
     {
         let artworks = this.props.artworks
-        console.log(artworks)
 
         return (
             <div className="grid-inner fade-in-section">

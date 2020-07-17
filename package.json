@@ -15,6 +15,7 @@
     "react": "^16.13.1",
     "react-alertify-js": "0.0.1",
     "react-dom": "^16.13.1",
+    "react-facebook-pixel": "^1.0.3",
     "react-native": "^0.62.2",
     "react-phone-input-2": "^2.13.3",
     "react-phone-number-input": "^3.0.22",

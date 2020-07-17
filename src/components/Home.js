@@ -21,6 +21,7 @@ import '../css/style.css'
 import '../css/alertify.min.css'
 import '../css/main.css'
 import Footer from "./Footer";
+import ReactPixel from 'react-facebook-pixel';
 
 class Home extends Component
 {
@@ -41,6 +42,13 @@ class Home extends Component
 
     componentDidMount()
     {
+        const options = {
+            autoConfig: false,
+        };
+
+        ReactPixel.init('586972681963892', options);
+        ReactPixel.pageView();
+
         axios.get(url_back+'/home/').then(response => {
             let data = response.data.data
             this.setState({
