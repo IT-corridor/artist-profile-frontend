@@ -180,7 +180,7 @@ class Form extends Component {
 									checked={this.state.original_work_by_artist}
 								/>
 								<div className="state label-first">
-									<img className="svg" src="/images/task.png" />
+									<img className="svg" src="/images/task.png" alt="checkbox" />
 									<label>Inquire about original work by Robert. </label>
 								</div>
 							</div>
@@ -193,7 +193,7 @@ class Form extends Component {
 									checked={this.state.limited_edition_prints_sculpture}
 								/>
 								<div className="state">
-									<img className="svg" src="/images/task.png" />
+									<img className="svg" src="/images/task.png" alt="checkbox" />
 									<label>Inquire about Robert’s limited
 								   edition prints and sculpture.</label>
 								</div>
@@ -206,7 +206,7 @@ class Form extends Component {
 									checked={this.state.newsletter_from_artist}
 								/>
 								<div className="state">
-									<img className="svg" src="/images/task.png" />
+									<img className="svg" src="/images/task.png" alt="checkbox" />
 									<label>To receive a very occasional newsletter
 								   from Robert’s studio please sign up here.</label>
 								</div>
