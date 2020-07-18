@@ -31,8 +31,7 @@ class Galleries extends Component
 
                             <div className="art-details">
                                 <h2 className="art-name"><span>{gallery.name}</span></h2>
-
-                                    {Parser(gallery.content)}
+                                {Parser(gallery.content)}
                             </div>
                         </div>
                     )
