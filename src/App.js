@@ -5,6 +5,7 @@ import Gallery from "./components/Gallery";
 import Home from "./components/Home";
 
 import ErrorBoundary from "./components/ErrorBoundary";
+import NotFound from './components/NotFound'
 
 import {
   BrowserRouter as Router,
@@ -22,8 +23,9 @@ function App() {
         <ErrorBoundary>
             <Router>
                 <Switch>
-                    <Route path="/gallery/:id" render={(props) => <Gallery {...props} />}/>
-                    <Route path="/" component={Home}/>
+                    <Route exact={true} path="/gallery/:id" render={(props) => <Gallery {...props} />}/>
+                    <Route exact={true} path="/" component={Home}/>
+                    <Route path="*" exact={true} component={NotFound}/>
                 </Switch>
             </Router>
         </ErrorBoundary>

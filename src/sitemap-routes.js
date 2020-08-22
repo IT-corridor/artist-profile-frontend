@@ -3,7 +3,7 @@ import { Route } from 'react-router';
  
 export default (
     <Route>
-        <Route path='/' />
-        <Route path='/gallery/:id' />
+        <Route exact={true} path='/' />
+        <Route exact={true} path='/gallery/:id' />
     </Route>
 );
